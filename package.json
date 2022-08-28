@@ -1,0 +1,14 @@
+{
+  "name": "expressjs-facebook-app",
+  "version": "1.0.0",
+  "description": "facebook-app-using Express.js-momgoDb",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "chamuu",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
