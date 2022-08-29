@@ -4,7 +4,8 @@
   "description": "facebook-app-using Express.js-momgoDb",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "nodemon": "nodemon app.js"
   },
   "author": "chamuu",
   "license": "ISC",
