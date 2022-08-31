@@ -4,6 +4,7 @@ const app = express()
 const port = 4000
 
 const user =require('./routes/user')
+const post=require('./routes/post')
 
 const  url= 'mongodb://localhost/express'
 mongoose.connect(url,{useNewUrlParser:true})
@@ -15,6 +16,7 @@ con.on("open",()=>{
 
 app.use(express.json())
 app.use('/user', user)
+app.use('/post',post)
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
