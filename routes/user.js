@@ -43,7 +43,23 @@ router.post('/',async(req,res)=>{
     }
 })
 
+router.put('/:id',async (req,res)=>{
+    try {
+        const users =await User.findById(req.params.id)
+        users.firstName= req.body.firstName,
+            users.sureName= req.body.sureName,
+            users.gender= req.body.gender,
+            users.dateOfBirth= req.body.dateOfBirth,
+            users.password= req.body.password,
+            users.phoneNumber= req.body.phoneNumber,
+            users. email= req.body.email
 
+        const response =await users.save()
+        res.json(response)
+    }catch (err) {
+        res.send("Err : " + err)
+    }
+})
 
 
 
