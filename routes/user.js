@@ -15,6 +15,15 @@ router.get('/', async (req, res) => {
     }
 })
 
+router.get('/:id',async (req,res)=>{
+    try {
+        const users= await User.findById(req.params.id)
+        res.json(users)
+    }catch (err){
+        res.send('Err : '+ err)
+    }
+})
+
 router.post('/',async(req,res)=>{
    const user =await new User({
        firstName: req.body.firstName,
@@ -33,6 +42,8 @@ router.post('/',async(req,res)=>{
         res.send("Err : " + err)
     }
 })
+
+
 
 
 
