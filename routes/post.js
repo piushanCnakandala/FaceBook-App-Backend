@@ -57,5 +57,26 @@ router.delete('/:id', async (req, res) => {
     }
 })
 
+router.post('/auth/login', async (req,res)=>{
+    const {email, password} = req.body
+    User.findOne({email},(err,user)=>{
+        if (err || !email){
+            // console.log("hi")
+            return res.send(err)
+        }
+
+        if (user === null){
+            return res.send("Please Check the username & Password")
+        }else {
+            // console.log(user.password)
+            if (password === user.password){
+                return res.send("Login")
+            }else {
+                return res.send("Please Check the username & Password")
+            }
+        }
+    })
+}) //login done
+
 
 module.exports=router
